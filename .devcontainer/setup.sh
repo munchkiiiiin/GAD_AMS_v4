@@ -14,7 +14,10 @@ sudo apt-get install -y --no-install-recommends \
   libicu-dev libzip-dev libpng-dev libjpeg-dev libfreetype6-dev
 
 sudo docker-php-ext-configure gd --with-freetype --with-jpeg
-sudo docker-php-ext-install -j"$(nproc)" intl zip gd mysqli pdo_mysql
+# sudo drops PHP_INI_DIR, which docker-php-ext-install needs to write the
+# conf.d/docker-php-ext-*.ini files that enable each extension. Pass it through.
+sudo env PHP_INI_DIR="${PHP_INI_DIR:-/usr/local/etc/php}" \
+  docker-php-ext-install -j"$(nproc)" intl zip gd mysqli pdo_mysql
 
 echo "--- PHP extensions check ---"
 php -m | grep -Ei '^(intl|zip|gd|mysqli|pdo_mysql)$'
