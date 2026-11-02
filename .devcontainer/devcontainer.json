@@ -1,0 +1,23 @@
+{
+  "name": "GAD_AMS (CodeIgniter 4 + Vue/Vite)",
+  "image": "mcr.microsoft.com/devcontainers/php:1-8.3-bookworm",
+  "features": {
+    "ghcr.io/devcontainers/features/node:1": {
+      "version": "lts"
+    }
+  },
+  "postCreateCommand": "bash .devcontainer/setup.sh",
+  "forwardPorts": [8080, 5173],
+  "portsAttributes": {
+    "8080": { "label": "CodeIgniter (php spark serve)" },
+    "5173": { "label": "Vite dev server" }
+  },
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "bmewburn.vscode-intelephense-client",
+        "Vue.volar"
+      ]
+    }
+  }
+}
