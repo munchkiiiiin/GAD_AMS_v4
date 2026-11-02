@@ -8,6 +8,10 @@
         </div>
         <div class="topbar-actions">
 
+          <router-link to="/staff/budget-allocation">
+            <button class="topbar-btn outline">Budget Allocation Worklist</button>
+          </router-link>
+
           <router-link to="/staff/budget">
             <button class="topbar-btn outline">📊 Budget Monitoring</button>
           </router-link>

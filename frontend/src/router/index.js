@@ -107,6 +107,7 @@ const routes = [
       { path: 'archive', name: 'staff-archive', component: () => import('../views/staff/ArchiveView.vue') },
       { path: 'trashbin', name: 'staff-trashbin', component: () => import('../views/staff/DocumentTrashBin.vue') },
       { path: 'plan-and-budget', name: 'staff-plan-and-budget', component: () => import('../views/staff/PlanAndBudgetView.vue') },
+      { path: 'budget-allocation', name: 'staff-budget-allocation', component: () => import('../views/staff/AllocationWorklistView.vue') },
       { path: 'budget-history', name: 'staff-budget-history', component: () => import('../views/BudgetHistoryView.vue') },
       { path: 'budget-distribution', name: 'staff-budget-distribution', component: () => import('../views/staff/BudgetDistributionView.vue') },
       { path: 'reports', name: 'staff-reports', component: () => import('../views/staff/ReportsView.vue') },

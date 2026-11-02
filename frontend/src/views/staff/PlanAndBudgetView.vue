@@ -11,6 +11,7 @@
         <!-- nav removed -->
   
         <div class="topbar-actions">
+          <router-link to="/staff/budget-allocation"><button class="topbar-btn primary">Allocation Worklist</button></router-link>
           <router-link to="/staff/budget-distribution"><button class="topbar-btn secondary btn-budget-dist">Budget Distribution</button></router-link>
           <router-link to="/staff/budget-history"><button class="topbar-btn secondary">Budget History</button></router-link>
           <button class="topbar-btn outline btn-baseline" @click="openBaselineModal">

@@ -448,7 +448,15 @@ $routes->group((ENVIRONMENT === 'production' ? '' : 'api'), function($routes) {
     $routes->options('plan/mandate-allocations', 'AuthController::handleOptions');
     $routes->get('plan/mandate-allocations', 'PlanController::getMandateAllocations');
     $routes->post('plan/mandate-allocations', 'PlanController::saveMandateAllocations');
-    
+    $routes->options('plan/allocation-worklist', 'AuthController::handleOptions');
+    $routes->get('plan/allocation-worklist', 'PlanController::getAllocationWorklist', ['filter' => ['jwtAuth', 'staffOrAdmin']]);
+    $routes->options('plan/allocation-options', 'AuthController::handleOptions');
+    $routes->get('plan/allocation-options', 'PlanController::getAllocationOptions', ['filter' => ['jwtAuth', 'staffOrAdmin']]);
+    $routes->options('plan/mandate-budget-line', 'AuthController::handleOptions');
+    $routes->post('plan/mandate-budget-line', 'PlanController::addAllocationBudgetLine', ['filter' => ['jwtAuth', 'staffOrAdmin']]);
+    $routes->options('plan/item-allocation', 'AuthController::handleOptions');
+    $routes->post('plan/item-allocation', 'PlanController::saveItemAllocation', ['filter' => ['jwtAuth', 'staffOrAdmin']]);
+
     $routes->options('gpb/export/(:num)', 'AuthController::handleOptions');
     $routes->get('gpb/export/(:num)', 'GpbExportController::export/$1');
     
